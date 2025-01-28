@@ -1,0 +1,21 @@
+body {
+  background-image: url("./images/background.jpg");
+  background-size: 100%;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+#search {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border: 150px solid black;
+}
+
+#results {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+}
