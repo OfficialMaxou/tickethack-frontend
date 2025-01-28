@@ -1,0 +1,9 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "hackathon",
+  "main": "index.js",
+  "repository": "https://github.com/OfficialMaxou/tickethack-frontend.git",
+  "author": "Pauline Maxou",
+  "license": "MIT"
+}
