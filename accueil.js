@@ -1,31 +1,30 @@
+//const fetch = require('node-fetch');
+//const moment = require('moment');
 document.querySelector('#search-button').addEventListener ("click", sendInfomation);
 
-
+//{ $regex: new RegExp(req.body.cityName, 'i') }
 function sendInfomation () {
+    let villesTrouvees=[];
     let trip = {
-        departure : document.querySelector('#departure').value,
-        arrival : document.querySelector('#arrival').value,
-        date : document.querySelector('#date').value,
+       departure : { $regex: new RegExp(document.querySelector('#departure').value, 'i') },
+       // arrival : { $regex: new RegExp(document.querySelector('#arrival').value, 'i') },
+       //date : moment(document.querySelector('#date').value).format(), 
+       departure :document.querySelector('#departure').value,
+        arrival :document.querySelector('#arrival').value,
+        date : document.querySelector('#date').value
     };
-
-    fetch('http://localhost:3000/trips',{
-        method :"POST",
-        headers : { "Content-type":"application/json"},
-        body : JSON.stringify(trip)
-    })
-    .then(response => response.json())
-    .then((data)=>{
-        console.log(data)
-      /*  if (data == Trip.find({departure : Trip.departure,
-                                arrival : Trip.arrival,
-                                date : Trip.date})){
-
-                                }*/
+    console.log(trip);
         
-    })
-}
-
-
+fetch('http://localhost:3000/trips',{
+    
+})
+.then(response => response.json())
+.then((data)=>{
+    console.log(data.trips, "data")
+    //console.log(trip.departure)
+})
+            }
+//ajouter trajets
 function generateTrip (villesTrouvees,departure, arrival, hour, price) {
     for (let i=0; i<villesTrouvees.length; i++){
         document.querySelector('#results').innerHTML =
@@ -39,3 +38,25 @@ function generateTrip (villesTrouvees,departure, arrival, hour, price) {
         </div>`
     }
 }
+
+/*fetch('http://localhost:3000/trips',{
+        /*method :"POST",
+        headers : { "Content-type":"application/json"},
+        body : JSON.stringify(trip)
+    })
+    .then(response => response.json())
+    .then((data)=>{
+        console.log(data.trips, "data")
+        //console.log(trip.departure)
+            if (data.trips){//.departure == trip.departure )//&& data[0][i].arrival == trip.arrival /*&& data.date == trip.date*/
+                //villesTrouvees.push(data[i])
+               // }})
+            //}*/
+      /*  if (data == Trip.find({departure : Trip.departure,
+                                arrival : Trip.arrival,
+                                date : Trip.date})){
+
+                                }*/
+        
+    
+//)}
