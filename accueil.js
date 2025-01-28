@@ -6,7 +6,7 @@ document.querySelector('#search-button').addEventListener ("click", sendInfomati
 function sendInfomation () {
     let villesTrouvees=[];
     let trip = {
-       departure : { $regex: new RegExp(document.querySelector('#departure').value, 'i') },
+       //departure : { $regex: new RegExp(document.querySelector('#departure').value, 'i') },
        // arrival : { $regex: new RegExp(document.querySelector('#arrival').value, 'i') },
        //date : moment(document.querySelector('#date').value).format(), 
        departure :document.querySelector('#departure').value,
@@ -16,11 +16,13 @@ function sendInfomation () {
     console.log(trip);
         
 fetch('http://localhost:3000/trips',{
-    
+    method :"POST",
+    headers:{'Content-type':'application/json'},
+    body : JSON.stringify(trip)
 })
 .then(response => response.json())
 .then((data)=>{
-    console.log(data.trips, "data")
+    console.log(data)
     //console.log(trip.departure)
 })
             }
