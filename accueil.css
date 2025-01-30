@@ -16,6 +16,11 @@
   
 
 }
+
+#header {
+  display : flex;
+  justify-content: center;
+}
 #search {
   background-color: white;
   height: 400px;

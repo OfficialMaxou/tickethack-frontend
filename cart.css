@@ -1,0 +1,28 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    height:100vh ;
+    width:100% ;
+}
+#Cart {
+    display: flex;
+    align-items: flex-start;
+}
+#bookedtrips{
+    display: flex;
+    height: 100px;
+    width: 700px;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+#price{
+    display: flex;
+    justify-content: space-between;
+}
+#achat{
+    display:flex;
+    width: 700px;
+    justify-content: space-between;
+}
